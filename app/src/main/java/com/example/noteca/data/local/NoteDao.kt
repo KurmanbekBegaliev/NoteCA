@@ -7,14 +7,14 @@ import com.example.noteca.data.models.NoteEntity
 interface NoteDao {
 
     @Delete
-    fun delete(noteEntity: NoteEntity)
+    suspend fun delete(noteEntity: NoteEntity)
 
     @Insert
-    fun create(noteEntity: NoteEntity)
+    suspend fun create(noteEntity: NoteEntity)
 
     @Update
-    fun update(noteEntity: NoteEntity)
+    suspend fun update(noteEntity: NoteEntity)
 
     @Query("SELECT * FROM note_entity")
-    fun getAllNote(): List<NoteEntity>
+    suspend fun getAllNote(): List<NoteEntity>
 }
